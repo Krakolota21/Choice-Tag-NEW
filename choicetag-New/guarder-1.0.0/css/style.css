@@ -434,6 +434,49 @@ a:focus {
           align-items: center;
 }
 
+/* slider sectio*/
+
+.slider {
+  position: relative;
+  max-width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slides.active {
+  opacity: 1;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
 .about_section .img_container .img-box img {
   width: 100%;
 }
