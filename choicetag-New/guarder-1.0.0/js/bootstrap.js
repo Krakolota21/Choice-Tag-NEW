@@ -4445,37 +4445,35 @@
 //# sourceMappingURL=bootstrap.js.map
 
 
-function nextSlide(sliderId) {
-  let slider = document.getElementById(`slider${sliderId}`);
-  let slides = slider.getElementsByClassName('slides');
-  let currentSlideIndex = getCurrentSlideIndex(slides);
+//shopNow slider images
+
+function nextSlide(btn) {
+  let slider = btn.parentElement; // Get the parent slider element
+  let slides = slider.getElementsByClassName("slides");
+  let currentIndex = findActiveSlide(slides);
   
-  slides[currentSlideIndex].style.display = 'none';  // Hide current slide
-  let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
-  slides[nextSlideIndex].style.display = 'block';    // Show next slide
+  slides[currentIndex].classList.remove("active"); // Remove active class from current slide
+  let nextIndex = (currentIndex + 1) % slides.length; // Move to the next slide (wrap around)
+  slides[nextIndex].classList.add("active"); // Add active class to the next slide
 }
 
-function prevSlide(sliderId) {
-  let slider = document.getElementById(`slider${sliderId}`);
-  let slides = slider.getElementsByClassName('slides');
-  let currentSlideIndex = getCurrentSlideIndex(slides);
+function prevSlide(btn) {
+  let slider = btn.parentElement; // Get the parent slider element
+  let slides = slider.getElementsByClassName("slides");
+  let currentIndex = findActiveSlide(slides);
   
-  slides[currentSlideIndex].style.display = 'none';  // Hide current slide
-  let prevSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-  slides[prevSlideIndex].style.display = 'block';    // Show previous slide
+  slides[currentIndex].classList.remove("active"); // Remove active class from current slide
+  let prevIndex = (currentIndex - 1 + slides.length) % slides.length; // Move to the previous slide (wrap around)
+  slides[prevIndex].classList.add("active"); // Add active class to the previous slide
 }
 
-function getCurrentSlideIndex(slides) {
+function findActiveSlide(slides) {
   for (let i = 0; i < slides.length; i++) {
-    if (slides[i].style.display === 'block') {
-      return i;
-    }
+      if (slides[i].classList.contains("active")) {
+          return i;
+      }
   }
-  return 0;
+  return 0; // Fallback in case no active slide is found
 }
 
-<script>
-  function nextSlide(element) {
-    const slider = element.parentElement;
-    const slides = slider.getElementsByClassName('slides');
-    let activeIndex = -1;
+
