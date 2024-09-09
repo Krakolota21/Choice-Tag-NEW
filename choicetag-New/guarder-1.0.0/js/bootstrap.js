@@ -4443,3 +4443,39 @@
 
 }));
 //# sourceMappingURL=bootstrap.js.map
+
+
+function nextSlide(sliderId) {
+  let slider = document.getElementById(`slider${sliderId}`);
+  let slides = slider.getElementsByClassName('slides');
+  let currentSlideIndex = getCurrentSlideIndex(slides);
+  
+  slides[currentSlideIndex].style.display = 'none';  // Hide current slide
+  let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
+  slides[nextSlideIndex].style.display = 'block';    // Show next slide
+}
+
+function prevSlide(sliderId) {
+  let slider = document.getElementById(`slider${sliderId}`);
+  let slides = slider.getElementsByClassName('slides');
+  let currentSlideIndex = getCurrentSlideIndex(slides);
+  
+  slides[currentSlideIndex].style.display = 'none';  // Hide current slide
+  let prevSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+  slides[prevSlideIndex].style.display = 'block';    // Show previous slide
+}
+
+function getCurrentSlideIndex(slides) {
+  for (let i = 0; i < slides.length; i++) {
+    if (slides[i].style.display === 'block') {
+      return i;
+    }
+  }
+  return 0;
+}
+
+<script>
+  function nextSlide(element) {
+    const slider = element.parentElement;
+    const slides = slider.getElementsByClassName('slides');
+    let activeIndex = -1;

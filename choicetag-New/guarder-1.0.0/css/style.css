@@ -434,7 +434,9 @@ a:focus {
           align-items: center;
 }
 
-/* slider sectio*/
+/* slider section */
+
+
 
 .slider {
   position: relative;
@@ -475,6 +477,7 @@ a:focus {
 .next {
   right: 10px;
 }
+
 
 
 .about_section .img_container .img-box img {
