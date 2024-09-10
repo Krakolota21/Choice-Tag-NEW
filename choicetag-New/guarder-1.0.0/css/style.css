@@ -434,7 +434,7 @@ a:focus {
           align-items: center;
 }
 
-/* slider section */
+/* shopNow slider section */
 
 
 
@@ -478,6 +478,15 @@ a:focus {
   right: 10px;
 }
 
+.slides {
+  display: none;  /* Hide all images by default */
+}
+
+.slides.active {
+  display: block; /* Only display the active image */
+}
+
+ /*end shopNow slider*/
 
 
 .about_section .img_container .img-box img {

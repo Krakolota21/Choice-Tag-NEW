@@ -4477,3 +4477,15 @@ function findActiveSlide(slides) {
 }
 
 
+//shopnow autoslider
+function showSecondImage(slider) {
+  const slides = slider.querySelectorAll('.slides');
+  slides[0].classList.remove('active');  // Remove active class from the first image
+  slides[1].classList.add('active');     // Add active class to the second image
+}
+
+function showFirstImage(slider) {
+  const slides = slider.querySelectorAll('.slides');
+  slides[1].classList.remove('active');  // Remove active class from the second image
+  slides[0].classList.add('active');     // Add active class to the first image
+}
