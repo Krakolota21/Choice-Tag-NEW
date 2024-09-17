@@ -972,3 +972,27 @@ a:focus {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-6 {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ensures the box expands to fill available space */
+}
+
+.img-box {
+  flex: 1; /* Allows the img-box to expand as needed */
+}
+
+p {
+  margin-top: auto; /* Pushes the paragraph to the bottom of the box */
+}
